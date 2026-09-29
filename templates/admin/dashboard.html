@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}
+Admin Dashboard
+{% endblock %}
+
+
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <div>
+        <h2 class="page-title mb-1">
+            Admin Dashboard
+        </h2>
+
+        <p class="text-muted mb-0">
+            Manage employees and employee accounts
+        </p>
+    </div>
+
+</div>
+
+
+<!-- Statistics -->
+
+<div class="row g-4 mb-4">
+
+    <div class="col-md-4">
+
+        <div class="card dashboard-card p-4">
+
+            <h6 class="text-muted">
+                Total Employees
+            </h6>
+
+            <h2 class="mt-2">
+                {{ total_employees }}
+            </h2>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Management Options -->
+
+<div class="row g-4">
+
+    <div class="col-md-6">
+
+        <div class="card dashboard-card p-4">
+
+            <h4>
+                Employee Management
+            </h4>
+
+            <p class="text-muted">
+                View, search, edit and delete employee records.
+            </p>
+
+            <a
+                href="{{ url_for('admin.employees') }}"
+                class="btn btn-primary"
+            >
+                Manage Employees
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-md-6">
+
+        <div class="card dashboard-card p-4">
+
+            <h4>
+                Add Employee
+            </h4>
+
+            <p class="text-muted">
+                Create a new employee and automatically generate
+                login credentials.
+            </p>
+
+            <a
+                href="{{ url_for('admin.add_employee') }}"
+                class="btn btn-success"
+            >
+                + Add Employee
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

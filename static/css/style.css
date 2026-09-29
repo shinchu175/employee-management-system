@@ -1,0 +1,52 @@
+body {
+    background-color: #f5f7fb;
+    font-family: Arial, sans-serif;
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+.page-title {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.btn {
+    border-radius: 7px;
+}
+
+.table {
+    background-color: white;
+}
+
+.table th {
+    vertical-align: middle;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.dashboard-card {
+    transition: transform 0.2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-3px);
+}
+
+.form-control,
+.form-select {
+    border-radius: 7px;
+}
+
+.alert {
+    border-radius: 8px;
+}

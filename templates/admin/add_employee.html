@@ -1,0 +1,276 @@
+{% extends "base.html" %}
+
+{% block title %}
+Add Employee
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-9">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+            <div>
+                <h2 class="page-title mb-1">
+                    Add Employee
+                </h2>
+
+                <p class="text-muted mb-0">
+                    Create a new employee and generate login credentials.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="card p-4">
+
+            <form method="POST">
+
+                <!-- Employee Information -->
+
+                <h5 class="mb-3">
+                    Employee Information
+                </h5>
+
+
+                <div class="row g-3">
+
+                    <!-- Employee Code -->
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Employee Code *
+                        </label>
+
+                        <input
+                            type="text"
+                            name="employee_code"
+                            class="form-control"
+                            placeholder="Example: EMP003"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Email *
+                        </label>
+
+                        <input
+                            type="email"
+                            name="email"
+                            class="form-control"
+                            placeholder="employee@example.com"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- First Name -->
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            First Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            name="first_name"
+                            class="form-control"
+                            placeholder="First name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Last Name -->
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Last Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            name="last_name"
+                            class="form-control"
+                            placeholder="Last name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Phone -->
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Phone
+                        </label>
+
+                        <input
+                            type="text"
+                            name="phone"
+                            class="form-control"
+                            placeholder="Phone number"
+                        >
+
+                    </div>
+
+
+                    <!-- Department -->
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Department
+                        </label>
+
+                        <input
+                            type="text"
+                            name="department"
+                            class="form-control"
+                            placeholder="Example: IT"
+                        >
+
+                    </div>
+
+
+                    <!-- Designation -->
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Designation
+                        </label>
+
+                        <input
+                            type="text"
+                            name="designation"
+                            class="form-control"
+                            placeholder="Example: Python Developer"
+                        >
+
+                    </div>
+
+
+                    <!-- Joining Date -->
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Joining Date
+                        </label>
+
+                        <input
+                            type="date"
+                            name="joining_date"
+                            class="form-control"
+                        >
+
+                    </div>
+
+
+                    <!-- Salary -->
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Salary
+                        </label>
+
+                        <input
+                            type="number"
+                            name="salary"
+                            class="form-control"
+                            placeholder="Example: 30000"
+                            step="0.01"
+                            min="0"
+                        >
+
+                    </div>
+
+
+                    <!-- City -->
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            City
+                        </label>
+
+                        <input
+                            type="text"
+                            name="city"
+                            class="form-control"
+                            placeholder="Example: Bengaluru"
+                        >
+
+                    </div>
+
+
+                    <!-- Address -->
+
+                    <div class="col-12">
+
+                        <label class="form-label">
+                            Address
+                        </label>
+
+                        <textarea
+                            name="address"
+                            class="form-control"
+                            rows="3"
+                            placeholder="Employee address"
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Buttons -->
+
+                <div class="d-flex gap-2 mt-4">
+
+                    <button
+                        type="submit"
+                        class="btn btn-success"
+                    >
+                        Create Employee
+                    </button>
+
+
+                    <a
+                        href="{{ url_for('admin.employees') }}"
+                        class="btn btn-secondary"
+                    >
+                        Cancel
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

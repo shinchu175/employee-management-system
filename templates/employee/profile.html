@@ -1,0 +1,219 @@
+{% extends "base.html" %}
+
+{% block title %}
+My Profile
+{% endblock %}
+
+
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <div>
+
+        <h2 class="page-title mb-1">
+            My Profile
+        </h2>
+
+        <p class="text-muted mb-0">
+            View your employee information
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="card p-4">
+
+    <div class="row g-4">
+
+        <!-- Employee Code -->
+
+        <div class="col-md-6">
+
+            <label class="text-muted">
+                Employee Code
+            </label>
+
+            <div class="fw-semibold">
+                {{ employee.employee_code }}
+            </div>
+
+        </div>
+
+
+        <!-- Full Name -->
+
+        <div class="col-md-6">
+
+            <label class="text-muted">
+                Full Name
+            </label>
+
+            <div class="fw-semibold">
+                {{ employee.first_name }}
+                {{ employee.last_name }}
+            </div>
+
+        </div>
+
+
+        <!-- Email -->
+
+        <div class="col-md-6">
+
+            <label class="text-muted">
+                Email
+            </label>
+
+            <div class="fw-semibold">
+                {{ employee.email }}
+            </div>
+
+        </div>
+
+
+        <!-- Phone -->
+
+        <div class="col-md-6">
+
+            <label class="text-muted">
+                Phone
+            </label>
+
+            <div class="fw-semibold">
+                {{ employee.phone or 'Not provided' }}
+            </div>
+
+        </div>
+
+
+        <!-- Department -->
+
+        <div class="col-md-6">
+
+            <label class="text-muted">
+                Department
+            </label>
+
+            <div class="fw-semibold">
+                {{ employee.department or 'Not provided' }}
+            </div>
+
+        </div>
+
+
+        <!-- Designation -->
+
+        <div class="col-md-6">
+
+            <label class="text-muted">
+                Designation
+            </label>
+
+            <div class="fw-semibold">
+                {{ employee.designation or 'Not provided' }}
+            </div>
+
+        </div>
+
+
+        <!-- Joining Date -->
+
+        <div class="col-md-6">
+
+            <label class="text-muted">
+                Joining Date
+            </label>
+
+            <div class="fw-semibold">
+
+                {% if employee.joining_date %}
+                    {{ employee.joining_date.strftime('%d-%m-%Y') }}
+                {% else %}
+                    Not provided
+                {% endif %}
+
+            </div>
+
+        </div>
+
+
+        <!-- Salary -->
+
+        <div class="col-md-6">
+
+            <label class="text-muted">
+                Salary
+            </label>
+
+            <div class="fw-semibold">
+
+                {% if employee.salary is not none %}
+                    ₹{{ "%.2f"|format(employee.salary) }}
+                {% else %}
+                    Not provided
+                {% endif %}
+
+            </div>
+
+        </div>
+
+
+        <!-- City -->
+
+        <div class="col-md-6">
+
+            <label class="text-muted">
+                City
+            </label>
+
+            <div class="fw-semibold">
+                {{ employee.city or 'Not provided' }}
+            </div>
+
+        </div>
+
+
+        <!-- Address -->
+
+        <div class="col-12">
+
+            <label class="text-muted">
+                Address
+            </label>
+
+            <div class="fw-semibold">
+                {{ employee.address or 'Not provided' }}
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Actions -->
+
+    <div class="d-flex gap-2 mt-4">
+
+        <a
+            href="{{ url_for('employee.edit_profile') }}"
+            class="btn btn-warning"
+        >
+            Edit Profile
+        </a>
+
+
+        <a
+            href="{{ url_for('employee.dashboard') }}"
+            class="btn btn-secondary"
+        >
+            Back to Dashboard
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}
